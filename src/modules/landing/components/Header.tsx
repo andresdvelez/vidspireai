@@ -31,10 +31,7 @@ export const Header = () => {
           </SignedIn>
           <SignedOut>
             <SignInButton mode="modal">
-              <Button
-                variant="ghost"
-                className="bg-gradient-to-r from-blue-600 to to-blue-400 text-transparent bg-clip-text"
-              >
+              <Button className="bg-gradient-to-r from-blue-600 to to-blue-400 border-blue-400 shadow-blue-400 text-white shadow">
                 Join waitlist
               </Button>
             </SignInButton>
