@@ -21,7 +21,7 @@ export const Footer = () => {
               className="bg-white text-blue-600 hover:bg-white/90 transition-colors duration-300"
               size="lg"
             >
-              Start Creating Free
+              Join waitlist for Free
             </Button>
           </SignInButton>
         </div>

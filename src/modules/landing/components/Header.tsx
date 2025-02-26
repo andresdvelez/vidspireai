@@ -35,7 +35,7 @@ export const Header = () => {
                 variant="ghost"
                 className="bg-gradient-to-r from-blue-600 to to-blue-400 text-transparent bg-clip-text"
               >
-                Sign in
+                Join waitlist
               </Button>
             </SignInButton>
           </SignedOut>
