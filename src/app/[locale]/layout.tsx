@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { routing } from "@/modules/translations/i18n/routing";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { HeroUIProvider } from "@heroui/react";
-import "../globals.css";
+import { ClientWrapper } from "@/modules/core/components/ClientWrapper";
+import "../../styles/globals.css";
+import { Header } from "@/modules/landing/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,10 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <HeroUIProvider>{children}</HeroUIProvider>
+          <ClientWrapper>
+            <Header />
+            {children}
+          </ClientWrapper>
         </NextIntlClientProvider>
       </body>
     </html>

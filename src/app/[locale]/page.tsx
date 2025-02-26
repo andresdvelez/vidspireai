@@ -1,102 +1,14 @@
-"use client";
-
-import { Button, Input } from "@heroui/react";
-import { useState } from "react";
+import { Features } from "@/modules/landing/components/Features";
+import { Hero } from "@/modules/landing/components/Hero";
+import { Button } from "@heroui/react";
 
 export default function Home() {
-  const [videoUrl, setVideoUrl] = useState("");
-
   return (
-    <div className="min-h-screen bg-[#f8f9fa] bg-dots">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-xl font-bold text-gray-900">Vidspire</div>
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Sign in
-            </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              Get started
-            </Button>
-          </div>
-        </div>
-      </header>
-
+    <main className="min-h-screen bg-[#f8f9fa] bg-dots">
       {/* Hero Section */}
-      <section className="container px-4 pt-32 pb-20 mx-auto">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
-            Think, create, and{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              transform
-            </span>
-          </h1>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-400 tracking-tight">
-            all in one place
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Upload a link. Get transcriptions, thumbnails, and content ideas
-            instantly.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto p-4 bg-white rounded-xl shadow-lg">
-            <Input
-              type="url"
-              placeholder="Paste your video URL here..."
-              value={videoUrl}
-              onChange={(e) => setVideoUrl(e.target.value)}
-              className="flex-1 border-gray-200"
-            />
-            <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white"
-              onPress={() => console.log("Transform clicked")}
-            >
-              Transform{" "}
-              <i
-                className="icon-[solar--arrow-right-linear] size-5"
-                role="img"
-                aria-hidden="true"
-              />
-            </Button>
-          </div>
-        </div>
-      </section>
-
+      <Hero />
       {/* Features Section */}
-      <section className="py-20 bg-white border-y border-gray-100">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Powerful Features for Content Creators
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Transform your videos into multiple content formats with our
-              AI-powered tools
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 mb-4 rounded-lg bg-blue-50 flex items-center justify-center">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Features />
 
       {/* How It Works */}
       <section className="py-20">
@@ -152,48 +64,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
-
-const features = [
-  {
-    title: "Smart Transcription",
-    description:
-      "Get accurate transcriptions of your videos with timestamps and speaker detection.",
-    icon: (
-      <i
-        className="icon-[lucide--text] size-6 text-blue-600"
-        role="img"
-        aria-hidden="true"
-      />
-    ),
-  },
-  {
-    title: "AI Thumbnails",
-    description:
-      "Generate eye-catching thumbnails that increase click-through rates.",
-    icon: (
-      <i
-        className="icon-[lucide--image] size-6 text-blue-600"
-        role="img"
-        aria-hidden="true"
-      />
-    ),
-  },
-  {
-    title: "Instant Processing",
-    description:
-      "Transform your videos into multiple content pieces in seconds.",
-    icon: (
-      <i
-        className="icon-[token--zap] size-6 text-blue-600"
-        role="img"
-        aria-hidden="true"
-      />
-    ),
-  },
-];
 
 const steps = [
   {
