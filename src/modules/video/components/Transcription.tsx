@@ -19,6 +19,7 @@ export const Transcription = ({ videoId }: TranscriptionProps) => {
     transcript: TranscriptEntry[];
     cache: string;
   } | null>(null);
+  console.log(setTranscript, videoId);
 
   const { featureUsageExceeded } = useSchematicEntitlement(
     FeatureFlag.TRANSCRIPTION

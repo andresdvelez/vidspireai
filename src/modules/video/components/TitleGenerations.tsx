@@ -2,7 +2,6 @@
 
 import { Usage } from "@/modules/core/components/Usage";
 import { FeatureFlag } from "@/modules/core/features/flags";
-import { useUser } from "@clerk/nextjs";
 import { Button } from "@heroui/react";
 import { useSchematicEntitlement } from "@schematichq/schematic-react";
 
@@ -11,8 +10,9 @@ type TitleGenerationsProps = {
 };
 
 export const TitleGenerations = ({ videoId }: TitleGenerationsProps) => {
-  const { user } = useUser();
-  const titles = [];
+  // const { user } = useUser();
+  console.log(videoId);
+  const titles: Array<{ title: string; _id: string }> = [];
 
   const { value: isTitleGenerationEnabled } = useSchematicEntitlement(
     FeatureFlag.TITLE_GENERATIONS

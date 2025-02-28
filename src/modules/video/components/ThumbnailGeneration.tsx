@@ -1,9 +1,11 @@
 "use client";
 
+import { api } from "@/convex/_generated/api";
 import { Usage } from "@/modules/core/components/Usage";
 import { FeatureFlag } from "@/modules/core/features/flags";
 import { useUser } from "@clerk/nextjs";
 import { Image } from "@heroui/react";
+import { useQuery } from "convex/react";
 
 type ThumbnailGenerationProps = {
   videoId: string;
@@ -12,7 +14,10 @@ type ThumbnailGenerationProps = {
 export const ThumbnailGeneration = ({ videoId }: ThumbnailGenerationProps) => {
   const { user } = useUser();
 
-  const images = [];
+  const images = useQuery(api.images.getImages, {
+    videoId,
+    userId: user?.id ?? "",
+  });
 
   return (
     <div className="rounded-xl flex flex-col p-4 border">
@@ -23,7 +28,7 @@ export const ThumbnailGeneration = ({ videoId }: ThumbnailGenerationProps) => {
         />
       </div>
       <div className={`flex overflow-x-auto gap-4 ${images?.length && "mt-4"}`}>
-        {images.map(
+        {images?.map(
           (image) =>
             image.url && (
               <div
