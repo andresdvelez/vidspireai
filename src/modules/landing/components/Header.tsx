@@ -5,7 +5,7 @@ import { Button } from "@heroui/react";
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <header className="sticky top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="text-xl font-bold text-gray-900 flex items-center gap-2">
           <AgentPulse size="small" color="blue" />
