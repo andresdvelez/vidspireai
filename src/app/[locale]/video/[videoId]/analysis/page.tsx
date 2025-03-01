@@ -2,6 +2,7 @@
 
 import { Usage } from "@/modules/core/components/Usage";
 import { FeatureFlag } from "@/modules/core/features/flags";
+import { AiAgentChat } from "@/modules/video/components/AiAgentChat";
 import { ThumbnailGeneration } from "@/modules/video/components/ThumbnailGeneration";
 import { TitleGenerations } from "@/modules/video/components/TitleGenerations";
 import { Transcription } from "@/modules/video/components/Transcription";
@@ -31,7 +32,7 @@ const AnalysisPage = async ({ params }: AnalysisPageProps) => {
           <Transcription videoId={videoId} />
         </div>
         <div className="order-1 lg:order-2 lg:sticky lg:top-20 h-[500px] md:h-[calc(100vh-6rem)]">
-          <p>chat</p>
+          <AiAgentChat videoId={videoId} />
         </div>
       </div>
     </main>
